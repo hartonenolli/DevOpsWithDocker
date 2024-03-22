@@ -1,0 +1,9 @@
+Commands:
+docker run -d -it devopsdockeruh/simple-web-service:ubuntu
+
+docker exec -it zealous_sammet bash
+root@fe64ce05b734:/usr/src/app# tail -f ./text.log
+
+Secret message:
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
