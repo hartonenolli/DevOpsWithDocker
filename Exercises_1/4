@@ -1,0 +1,10 @@
+Command to start the process:
+docker run -it ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+
+To fix issues:
+docker exec -it gracious_sanderson bash
+
+Inside bash:
+apt-get update
+apt-get -y install curl
+
