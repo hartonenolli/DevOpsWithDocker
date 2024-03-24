@@ -1,0 +1,15 @@
+Image sizes:
+devopsdockeruh/simple-web-service   ubuntu            4e3362e907d5   3 years ago   83MB
+devopsdockeruh/simple-web-service   alpine            fd312adc88e0   3 years ago   15.7MB
+
+Command inside Alpine container:
+docker exec -it hungry_curran sh
+
+Inside shell:
+/usr/src/app # tail -f ./text.log
+2024-03-24 05:40:17 +0000 UTC
+2024-03-24 05:40:19 +0000 UTC
+2024-03-24 05:40:21 +0000 UTC
+2024-03-24 05:40:23 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+

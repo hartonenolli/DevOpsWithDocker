@@ -1,0 +1,14 @@
+Commands:
+docker run -it devopsdockeruh/pull_exercise
+
+I searched dockerhub with:
+devopsdockeruh/pull_exercise
+
+In readme was text:
+This is the readme, use input "basics" to complete this exercise.
+
+To input "basics" to command line:
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+
