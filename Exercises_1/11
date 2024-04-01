@@ -1,0 +1,18 @@
+# to get java 8
+FROM amazoncorretto:8
+
+# open the correct port
+EXPOSE 8080
+
+WORKDIR /usr/src/app
+
+# copy mvnw, pom and src
+COPY mvnw* .
+COPY pom.xml .
+COPY . .
+
+# build project
+RUN ./mvnw package
+
+# command to run
+CMD ["java", "-jar", "./target/docker-example-1.1.3.jar"]
