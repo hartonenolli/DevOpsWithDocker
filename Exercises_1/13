@@ -1,0 +1,19 @@
+Dockerfile:
+
+FROM golang:1.16
+
+WORKDIR /app
+
+COPY . .
+
+ENV REQUEST_ORIGIN=http://localhost:8080
+
+EXPOSE 8080
+
+RUN go build
+
+CMD ["./server"]
+
+Command:
+
+docker build . -t ping && docker run -p 8080:8080 ping
