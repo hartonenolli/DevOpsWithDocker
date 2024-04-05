@@ -1,0 +1,48 @@
+Fronend Dockerfile:
+# Use node:14
+FROM node:14
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package.json ./
+COPY package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the src
+COPY . .
+
+# Expose a port 3000, 5000 was reserved
+EXPOSE 3000
+
+RUN npm install -g serve
+
+RUN REACT_APP_BACKEND_URL=http://localhost:8080 npm run build
+
+# Command to run the application
+CMD ["serve", "-s", "-l", "3000", "build"]
+
+
+
+Backend Dockerfile:
+FROM golang:1.16
+
+WORKDIR /app
+
+COPY . .
+
+ENV REQUEST_ORIGIN=http://localhost:3000
+
+EXPOSE 8080
+
+RUN go build
+
+ENTRYPOINT ["./server"]
+
+
+Commands:
+docker build . -t frontend && docker run -p 3000:3000 frontend
+docker build . -t ping && docker run -p 8080:8080 ping
