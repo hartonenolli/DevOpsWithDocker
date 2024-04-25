@@ -1,0 +1,2 @@
+Frontend size before optimization: 298MB
+After optimization: 129MB
