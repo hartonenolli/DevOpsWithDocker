@@ -1,0 +1,2 @@
+Backend size before optimization: 377MB
+After optimization: 18MB
